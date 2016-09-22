@@ -15,8 +15,8 @@ public class LeverSwitched : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D obj){
 
 		if (obj.gameObject.name == "Bucky") {
-			Debug.Log ("We are colliding with the object");
-			Debug.Log (Input.GetKeyUp ("e"));
+			//Debug.Log ("We are colliding with the object");
+			//Debug.Log (Input.GetKeyUp ("e"));
 			//Debug.Log (num);
 			if(!gameObject.GetComponent<LeverSwitched>().enabled){
 
@@ -40,7 +40,7 @@ public class LeverSwitched : MonoBehaviour {
 	void Update () {
 
 		if(Input.GetKeyUp ("e")){
-			Debug.Log("The action key has been pressed while collision is happening");
+			//Debug.Log("The action key has been pressed while collision is happening");
 
 			foreach (GameObject convey in Conveyor) {
 
