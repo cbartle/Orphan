@@ -4,16 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class GoSceneTwo : MonoBehaviour {
 
+	private GameObject Bucky;
 	// Use this for initialization
 	void Start () {
 	
+		Bucky = GameObject.Find ("Bucky");
+
 	}
 
 	void OnCollisionStay2D(Collision2D obj){
 
-		if (obj.gameObject.name == "Bucky") {
-			Debug.Log ("The Door");
-			Debug.Log (Input.GetKeyUp ("e"));
+		if (Bucky.GetComponent<hasKeys>().enabled && obj.gameObject == Bucky) {
+			//Debug.Log ("The Door");
+			//Debug.Log (Input.GetKeyUp ("e"));
 			//Debug.Log (num);
 			if(Input.GetKeyUp("e")){
 
