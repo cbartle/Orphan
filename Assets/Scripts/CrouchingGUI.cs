@@ -3,13 +3,11 @@ using System.Collections;
 
 public class CrouchingGUI : MonoBehaviour {
 
-	private GameObject Bucky;
+
 
 
 	// Use this for initialization
 	void Start () {
-
-		Bucky = GameObject.Find ("Bucky");
 
 		gameObject.GetComponent<CrouchingGUI> ().enabled = false;
 
@@ -23,18 +21,17 @@ public class CrouchingGUI : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D obj){
 
-		//if (obj.gameObject == Bucky) {
-			Debug.Log ("Bucky is here");
-			gameObject.GetComponent<CrouchingGUI> ().enabled = true;
-		//}
+		//turns on the script making the GUI appear
+		gameObject.GetComponent<CrouchingGUI> ().enabled = true;
+
 	
 	}
 
 	void OnTriggerExit2D(Collider2D obj){
 
-		//if (obj.gameObject == Bucky) {
-			gameObject.GetComponent<CrouchingGUI> ().enabled = false;
-		//}
+		//turns of the script making the instructions disappear
+		gameObject.GetComponent<CrouchingGUI> ().enabled = false;
+
 
 	}
 

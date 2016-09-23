@@ -2,25 +2,24 @@
 using System.Collections;
 
 public class ConveyorMoving : MonoBehaviour {
-
-	//float speed = 1f;
-	public float velocity = 0.5f;
+	
+	public float speed = 0.5f;
 
 
 
 	void OnCollisionStay2D(Collision2D obj){
 
-		//when colliding with the player		
-		//if (obj.gameObject.name == "Bucky") {
+		//reacts if the script is on so that we can turn off and on the conveyor effect
+		if (gameObject.GetComponent<ConveyorMoving> ().enabled){
 
-			//Debug.Log ("We are touching the conveyor");
-			//reacts if the script is on so that we can turn off and on the conveyor effect
-			if (gameObject.GetComponent<ConveyorMoving> ().enabled)
-				
-				obj.gameObject.transform.Translate (velocity, 0.0f, 0.0f);
+			if(obj.gameObject.GetComponent<PlatformerCharacter2D>().m_FacingRight)	
+				obj.gameObject.transform.Translate (speed, 0.0f, 0.0f);
+			else 
+				obj.gameObject.transform.Translate (-speed, 0.0f, 0.0f);
+		
 
-		//}
-
+		}
+		
 	}
 
 
