@@ -21,7 +21,7 @@ public class hasKeys : MonoBehaviour {
 		//if we are touching the silver key
 		if (obj.gameObject == silverKey) {
 
-			Debug.Log ("We are touching the key");
+			//Debug.Log ("We are touching the key");
 			//make the gold key appear
 			if (Input.GetKeyUp ("e")) {
 
@@ -35,7 +35,7 @@ public class hasKeys : MonoBehaviour {
 
 		if (obj.gameObject == goldKey) {
 
-			Debug.Log ("We are touching the key");
+			//Debug.Log ("We are touching the key");
 			//make the gold key appear
 			if (Input.GetKeyUp ("e")) {
 
