@@ -7,7 +7,7 @@ public class ConveyorMoving : MonoBehaviour {
 
 
 
-	void OnCollisionStay2D(Collision2D obj){
+	void OnTriggerStay2D(Collider2D obj){
 
 		//reacts if the script is on so that we can turn off and on the conveyor effect
 		if (gameObject.GetComponent<ConveyorMoving> ().enabled){

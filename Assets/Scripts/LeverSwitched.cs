@@ -12,24 +12,19 @@ public class LeverSwitched : MonoBehaviour {
 
 	}
 
-	void OnCollisionStay2D(Collision2D obj){
+	void OnTriggerStay2D(Collider2D obj){
 
 		if (obj.gameObject.name == "Bucky") {
-			//Debug.Log ("We are colliding with the object");
-			//Debug.Log (Input.GetKeyUp ("e"));
-			//Debug.Log (num);
+			//turns on the Script to allow for the switching of the levers
 			if(!gameObject.GetComponent<LeverSwitched>().enabled){
-
 				gameObject.GetComponent<LeverSwitched> ().enabled = true;
 			}
 
-
-			//Debug.Log (Conveyor.GetComponent<ConveyorMoving>().enabled);
 		}
 
 	}
 
-	void OnCollisionExit2D(Collision2D obj){
+	void OnTriggerExit2D(Collider2D obj){
 
 		gameObject.GetComponent<LeverSwitched> ().enabled = false;
 
@@ -38,17 +33,18 @@ public class LeverSwitched : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		//if 'e' is pressed
 		if(Input.GetKeyUp ("e")){
 			//Debug.Log("The action key has been pressed while collision is happening");
 
 			foreach (GameObject convey in Conveyor) {
-
+				//turn off the conveyor action of each object with the tag "Conveyor"
 				if (convey.GetComponent<ConveyorMoving> ().enabled == true){
 					convey.GetComponent<ConveyorMoving> ().enabled = false;
 					GameObject.Find("Lever").GetComponent<Renderer>().enabled = false;
 					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = true;
 				}
+				//if effect is already off, turn it back on
 				else{
 					convey.GetComponent<ConveyorMoving> ().enabled = true;
 					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = false;

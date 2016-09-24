@@ -11,7 +11,7 @@ public class GoSceneTwo : MonoBehaviour {
 
 	}
 
-	void OnCollisionStay2D(Collision2D obj){
+	void OnTriggerStay2D(Collider2D obj){
 
 		if (obj.gameObject.GetComponent<hasKeys>().enabled) {
 			
@@ -25,7 +25,7 @@ public class GoSceneTwo : MonoBehaviour {
 
 	}
 
-	void OnCollisionExit2D(Collision2D obj){
+	void OnTriggerExit2D(Collider2D obj){
 
 		gameObject.GetComponent<GoSceneTwo> ().enabled = false;
 
