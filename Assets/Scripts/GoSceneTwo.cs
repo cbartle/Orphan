@@ -4,39 +4,41 @@ using UnityEngine.SceneManagement;
 
 public class GoSceneTwo : MonoBehaviour {
 
-	private GameObject Bucky;
+
 	// Use this for initialization
 	void Start () {
-	
-		Bucky = GameObject.Find ("Bucky");
+
 
 	}
 
 	void OnCollisionStay2D(Collision2D obj){
 
-		if (Bucky.GetComponent<hasKeys>().enabled && obj.gameObject == Bucky) {
-			//Debug.Log ("The Door");
-			//Debug.Log (Input.GetKeyUp ("e"));
-			//Debug.Log (num);
-			if(Input.GetKeyUp("e")){
+		if (obj.gameObject.GetComponent<hasKeys>().enabled) {
+			
+			if(Input.GetKeyUp("e"))
 
 				SceneManager.LoadScene ("WorldOneSceneTwo");
-			}
+		} else {
 
-
-			//Debug.Log (Conveyor.GetComponent<ConveyorMoving>().enabled);
+			gameObject.GetComponent<GoSceneTwo> ().enabled = true;
 		}
 
 	}
 
-	//void LoadScene("WorldOneSceneTwo"){
-//
-//	}
+	void OnCollisionExit2D(Collision2D obj){
+
+		gameObject.GetComponent<GoSceneTwo> ().enabled = false;
+
+	}
 
 	// Update is called once per frame
 	void Update () {
-	
-	
+
+	}
+
+	void OnGUI(){
+		GUI.color = Color.blue;
+		GUI.Label (new Rect (50, 100, 300, 50), "Two keys are required to pass through this door");
 
 	}
 }
