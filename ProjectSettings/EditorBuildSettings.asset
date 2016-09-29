@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Test Scene.unity
   - enabled: 1
     path: Assets/WorldOneSceneTwo.unity
+  - enabled: 1
+    path: Assets/WorldOneSceneThree.unity
