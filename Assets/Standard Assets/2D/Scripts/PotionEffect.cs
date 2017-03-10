@@ -25,7 +25,8 @@ public class PotionEffect : MonoBehaviour {
 
 		gameObject.transform.Rotate (0, 0, 180);
 		gameObject.GetComponent<Rigidbody2D> ().gravityScale *= -1;
-		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (reversedVelocity.x ,  reversedVelocity.y);
+		gameObject.GetComponent<PlatformerCharacter2D> ().m_JumpForce *= -1;
+		//gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (reversedVelocity.x ,  reversedVelocity.y);
 
 	}
 
@@ -43,6 +44,7 @@ public class PotionEffect : MonoBehaviour {
 		gameObject.transform.Rotate (0, 0, -180);
 		gameObject.GetComponent<Rigidbody2D> ().gravityScale *= -1;
 		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-1 * reversedVelocity.x, reversedVelocity.y);
+		gameObject.GetComponent<PlatformerCharacter2D> ().m_JumpForce *= -1;
 
 	}
 }
