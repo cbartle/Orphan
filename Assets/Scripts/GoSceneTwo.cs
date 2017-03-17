@@ -16,7 +16,7 @@ public class GoSceneTwo : MonoBehaviour {
 	int num = 0;
 	void OnTriggerStay2D(Collider2D obj){
 
-		if (obj.gameObject.GetComponent<hasKeys>().enabled) {
+		if (obj.tag == "Player" &&  obj.gameObject.GetComponent<hasKeys>().enabled) {
 
 			if (Input.GetKeyDown ("e")) {
 				
