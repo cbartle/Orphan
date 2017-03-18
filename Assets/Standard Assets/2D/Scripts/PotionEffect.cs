@@ -28,11 +28,11 @@ public class PotionEffect : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody2D> ().gravityScale *= -1;
 		gameObject.GetComponent<PlatformerCharacter2D> ().m_JumpForce *= -1;
 		//gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (reversedVelocity.x ,  reversedVelocity.y);
-		//foreach (GameObject box in Boxes) {
-		//	box.GetComponent<FallingBox> ().enabled = true;
-		//}
+		foreach (GameObject box in Boxes) {
+			//box.GetComponent<BoxFalling> ().enabled = true;
+		}
 		GameObject Box = GameObject.FindGameObjectWithTag("FallingBox");
-	
+		Box.GetComponent<BoxCollider2D> ();
 	}
 
 	// Update is called once per frame

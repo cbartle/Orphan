@@ -41,12 +41,14 @@ public class LeverSwitched : MonoBehaviour {
 				//turn off the conveyor action of each object with the tag "Conveyor"
 				if (convey.GetComponent<ConveyorMoving> ().enabled == true){
 					convey.GetComponent<ConveyorMoving> ().enabled = false;
+					convey.GetComponent<BottomConveyor> ().enabled = false;
 					GameObject.Find("Lever").GetComponent<Renderer>().enabled = false;
 					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = true;
 				}
 				//if effect is already off, turn it back on
 				else{
 					convey.GetComponent<ConveyorMoving> ().enabled = true;
+					convey.GetComponent<BottomConveyor> ().enabled = true;
 					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = false;
 					GameObject.Find("Lever").GetComponent<Renderer>().enabled = true;
 				}
