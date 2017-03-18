@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 396614942}
   - component: {fileID: 396614941}
   - component: {fileID: 396614940}
+  - component: {fileID: 396614943}
   m_Layer: 0
   m_Name: Test Box
   m_TagString: FallingBox
@@ -463,7 +464,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 396614937}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56c8e52cbe7c0442f965481f776fea77, type: 3}
   m_Name: 
@@ -523,6 +524,17 @@ SpriteRenderer:
   m_Color: {r: 0, g: 0.7754447, b: 0.9852941, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &396614943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 396614937}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a5587fdc7374495b1d54fe04791995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &525287476
 Prefab:
   m_ObjectHideFlags: 0

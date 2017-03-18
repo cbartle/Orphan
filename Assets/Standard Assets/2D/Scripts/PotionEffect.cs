@@ -17,7 +17,7 @@ public class PotionEffect : MonoBehaviour {
 	void Start () {
 		reversedVelocity.x = -1 * gameObject.GetComponent<Rigidbody2D> ().velocity.x;
 		reversedVelocity.y = gameObject.GetComponent<Rigidbody2D> ().velocity.y;
-		Boxes = GameObject.FindGameObjectsWithTag("FallingBox");
+
 
 	}
 
@@ -25,14 +25,13 @@ public class PotionEffect : MonoBehaviour {
 	void OnEnable (){
 		//GameObject.FindGameObjectWithTag ("FallingBox").
 		gameObject.transform.Rotate (0, 0, 180);
+		Boxes = GameObject.FindGameObjectsWithTag("FallingBox");
 		gameObject.GetComponent<Rigidbody2D> ().gravityScale *= -1;
 		gameObject.GetComponent<PlatformerCharacter2D> ().m_JumpForce *= -1;
 		//gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (reversedVelocity.x ,  reversedVelocity.y);
 		foreach (GameObject box in Boxes) {
-			//box.GetComponent<BoxFalling> ().enabled = true;
+			box.GetComponent<Rigidbody2D> ().gravityScale *= -1;
 		}
-		GameObject Box = GameObject.FindGameObjectWithTag("FallingBox");
-		Box.GetComponent<BoxCollider2D> ();
 	}
 
 	// Update is called once per frame
@@ -50,9 +49,9 @@ public class PotionEffect : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody2D> ().gravityScale *= -1;
 		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-1 * reversedVelocity.x, reversedVelocity.y);
 		gameObject.GetComponent<PlatformerCharacter2D> ().m_JumpForce *= -1;
-		/*foreach (GameObject box in Boxes) {
-			box.GetComponent<FallingBox> ().enabled = false;
-		}*/
+		foreach (GameObject box in Boxes) {
+			box.GetComponent<Rigidbody2D> ().gravityScale *= -1;
+		}
 
 	}
 }
