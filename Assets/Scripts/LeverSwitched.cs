@@ -4,11 +4,13 @@ using System.Collections;
 public class LeverSwitched : MonoBehaviour {
 	
 	GameObject[] Conveyor;
+	GameObject[] ConveyorBottom;
 	//Vector3 rotate = (0.0, 0.0, 0.0);
 	// Use this for initialization
 	void Start () {
 	
 		Conveyor = GameObject.FindGameObjectsWithTag ("Conveyor");
+		ConveyorBottom = GameObject.FindGameObjectsWithTag ("ConveyorBottom");
 
 	}
 
@@ -41,17 +43,25 @@ public class LeverSwitched : MonoBehaviour {
 				//turn off the conveyor action of each object with the tag "Conveyor"
 				if (convey.GetComponent<ConveyorMoving> ().enabled == true){
 					convey.GetComponent<ConveyorMoving> ().enabled = false;
-					convey.GetComponent<BottomConveyor> ().enabled = false;
+					//
 					GameObject.Find("Lever").GetComponent<Renderer>().enabled = false;
 					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = true;
 				}
 				//if effect is already off, turn it back on
 				else{
 					convey.GetComponent<ConveyorMoving> ().enabled = true;
-					convey.GetComponent<BottomConveyor> ().enabled = true;
+					//convey.GetComponent<BottomConveyor> ().enabled = true;
 					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = false;
 					GameObject.Find("Lever").GetComponent<Renderer>().enabled = true;
 				}
+			}
+			foreach (GameObject bottomConveyor in ConveyorBottom) {
+			
+				if (bottomConveyor.GetComponent<BottomConveyor> ().enabled == true) {
+					bottomConveyor.GetComponent<BottomConveyor> ().enabled = false;
+				}else 
+					bottomConveyor.GetComponent<BottomConveyor> ().enabled = true;
+			
 			}
 		}
 	}

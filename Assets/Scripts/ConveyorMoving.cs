@@ -11,7 +11,8 @@ public class ConveyorMoving : MonoBehaviour {
 
 		//reacts if the script is on so that we can turn off and on the conveyor effect
 		if (gameObject.GetComponent<ConveyorMoving> ().enabled) {
-			if (!obj.gameObject.GetComponent<PotionEffect> ().enabled) {
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+			if (!player.GetComponent<PotionEffect> ().enabled) {
 				obj.gameObject.transform.Translate (speed, 0.0f, 0.0f);
 			} else
 				obj.gameObject.transform.Translate (-speed, 0.0f, 0.0f);
