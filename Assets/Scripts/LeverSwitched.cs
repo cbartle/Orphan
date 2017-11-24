@@ -44,23 +44,28 @@ public class LeverSwitched : MonoBehaviour {
 				if (convey.GetComponent<ConveyorMoving> ().enabled == true){
 					convey.GetComponent<ConveyorMoving> ().enabled = false;
 					//
-					GameObject.Find("Lever").GetComponent<Renderer>().enabled = false;
-					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = true;
+					GameObject.Find("Lever").GetComponent<Renderer>().enabled = true;
+					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = false;
 				}
 				//if effect is already off, turn it back on
 				else{
 					convey.GetComponent<ConveyorMoving> ().enabled = true;
 					//convey.GetComponent<BottomConveyor> ().enabled = true;
-					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = false;
-					GameObject.Find("Lever").GetComponent<Renderer>().enabled = true;
+					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = true;
+					GameObject.Find("Lever").GetComponent<Renderer>().enabled = false;
 				}
 			}
 			foreach (GameObject bottomConveyor in ConveyorBottom) {
 			
 				if (bottomConveyor.GetComponent<BottomConveyor> ().enabled == true) {
 					bottomConveyor.GetComponent<BottomConveyor> ().enabled = false;
-				}else 
+					GameObject.Find ("Lever").GetComponent<Renderer> ().enabled = true;
+					GameObject.Find ("LeverOpposite").GetComponent<Renderer> ().enabled = false;
+				} else {
 					bottomConveyor.GetComponent<BottomConveyor> ().enabled = true;
+					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = true;
+					GameObject.Find("Lever").GetComponent<Renderer>().enabled = false;
+				}
 			
 			}
 		}
