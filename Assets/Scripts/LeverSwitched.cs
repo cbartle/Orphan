@@ -46,6 +46,7 @@ public class LeverSwitched : MonoBehaviour {
 					//
 					GameObject.Find("Lever").GetComponent<Renderer>().enabled = true;
 					GameObject.Find("LeverOpposite").GetComponent<Renderer>().enabled = false;
+					//GameObject.Find ("Platform").GetComponent<>;
 				}
 				//if effect is already off, turn it back on
 				else{

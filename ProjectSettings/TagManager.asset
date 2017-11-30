@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Conveyor
   - Lever
+  - FallingBox
+  - StickyBox
+  - ConveyorBottom
   layers:
   - Default
   - TransparentFX
